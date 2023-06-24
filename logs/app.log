@@ -1,0 +1,37 @@
+2023-06-07 12:05:01,636 DEBUG c.f.App [main] This is a debug log
+2023-06-07 12:06:04,783 DEBUG c.f.App [main] This is a debug log
+2023-06-07 12:08:01,872 DEBUG c.f.App [main] This is a debug log
+2023-06-07 12:19:21,661 DEBUG c.f.App [main] This is a debug log
+2023-06-07 12:21:07,957 DEBUG c.f.App [main] This is a debug log
+2023-06-07 12:21:17,885 INFO c.f.c.MainMenu [main] remy123 has successfully logged into the system
+
+2023-06-07 12:37:44,060 DEBUG c.f.App [main] This is a debug log
+2023-06-07 12:38:08,283 ERROR c.f.u.ConnectionUtil [main] Connection attempt occured
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:354) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.Driver.makeConnection(Driver.java:443) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.Driver.connect(Driver.java:297) ~[postgresql-42.6.0.jar:42.6.0]
+	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
+	at com.freelance.util.ConnectionUtil.getConnection(ConnectionUtil.java:21) [classes/:?]
+	at com.freelance.dao.UserDaoImpl.getUserByUsername(UserDaoImpl.java:50) [classes/:?]
+	at com.freelance.services.UserService.validateCredentials(UserService.java:22) [classes/:?]
+	at com.freelance.consoleviews.MainMenu.view(MainMenu.java:35) [classes/:?]
+	at com.freelance.App.main(App.java:42) [classes/:?]
+Caused by: java.net.UnknownHostException: sdfsdatabase-3.c1id9nh7k0j8.us-east-1.rds.amazonaws.com
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:229) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:?]
+	at java.net.Socket.connect(Socket.java:609) ~[?:?]
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258) ~[postgresql-42.6.0.jar:42.6.0]
+	... 11 more
+2023-06-12 19:59:34,708 DEBUG c.f.App [main] This is a debug log
+2023-06-12 20:01:47,168 DEBUG c.f.App [main] This is a debug log
+2023-06-12 20:02:00,853 INFO c.f.c.MainMenu [main] remy123 has successfully logged into the system
+2023-06-14 22:25:16,963 DEBUG c.f.App [main] This is a debug log
+2023-06-21 11:14:05,990 DEBUG c.f.App [main] This is a debug log
+2023-06-21 11:14:14,239 INFO c.f.c.MainMenu [main] remy123 has successfully logged into the system
