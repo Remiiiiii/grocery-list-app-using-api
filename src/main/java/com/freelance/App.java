@@ -1,15 +1,11 @@
 package com.freelance;
 
-import java.util.List;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import com.freelance.dao.UserDao;
-import com.freelance.dao.UserDaoImpl;
-import com.freelance.consoleviews.MainMenu;
-import com.freelance.util.InputUtil;
-import com.freelance.models.User;
+import com.freelance.controllers.GroceryItemController;
+import com.freelance.controllers.SessionController;
+import com.freelance.controllers.UserController;
+import io.javalin.Javalin;
 
 /**
  * Grocery List Specs
@@ -38,8 +34,24 @@ public class App {
 
         logger.debug("This is a debug log");
 
-        MainMenu mainMenu = new MainMenu();
-        mainMenu.view();
+        UserController userController = new UserController();
+        GroceryItemController groceryItemController = new GroceryItemController();
+        SessionController sc = new SessionController();
+
+        // MainMenu mainMenu = new MainMenu();
+        // mainMenu.view();
+
+        Javalin app = Javalin.create().start(9000);
+
+        app.post("/api/user", userController::register);
+        app.post("/api/session", sc::login);
+        app.delete("/api/session", sc::logout);
+        app.get("/api/session", sc::checkSession);
+
+        app.get("/api/item", groceryItemController::getAllItemsGivenUserId);
+        app.post("/api/item", groceryItemController::createItem);
+        app.patch("/api/item/{itemId}", groceryItemController::markItemComplete);
+        app.delete("/api/item/{itemId}", groceryItemController::deleteItem);
 
         // UserDao userDao = new UserDaoImpl();
 

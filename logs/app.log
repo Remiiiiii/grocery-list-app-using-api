@@ -35,3 +35,15 @@ Caused by: java.net.UnknownHostException: sdfsdatabase-3.c1id9nh7k0j8.us-east-1.
 2023-06-14 22:25:16,963 DEBUG c.f.App [main] This is a debug log
 2023-06-21 11:14:05,990 DEBUG c.f.App [main] This is a debug log
 2023-06-21 11:14:14,239 INFO c.f.c.MainMenu [main] remy123 has successfully logged into the system
+2023-06-24 13:38:10,569 DEBUG c.f.App [main] This is a debug log
+2023-06-24 14:55:09,854 DEBUG c.f.App [main] This is a debug log
+2023-06-24 14:56:37,547 DEBUG c.f.App [main] This is a debug log
+2023-06-24 14:56:59,264 DEBUG c.f.App [main] This is a debug log
+2023-06-24 14:58:06,174 DEBUG c.f.App [main] This is a debug log
+2023-06-24 14:59:30,589 DEBUG c.f.App [main] This is a debug log
+2023-06-24 15:04:48,113 DEBUG c.f.App [main] This is a debug log
+2023-06-24 15:06:30,692 DEBUG c.f.App [main] This is a debug log
+2023-06-24 15:13:57,276 DEBUG c.f.App [main] This is a debug log
+2023-06-24 15:16:55,598 DEBUG c.f.App [main] This is a debug log
+2023-06-24 15:24:23,252 DEBUG c.f.App [main] This is a debug log
+2023-06-24 15:29:04,329 DEBUG c.f.App [main] This is a debug log
