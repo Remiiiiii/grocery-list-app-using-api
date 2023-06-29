@@ -47,3 +47,5 @@ Caused by: java.net.UnknownHostException: sdfsdatabase-3.c1id9nh7k0j8.us-east-1.
 2023-06-24 15:16:55,598 DEBUG c.f.App [main] This is a debug log
 2023-06-24 15:24:23,252 DEBUG c.f.App [main] This is a debug log
 2023-06-24 15:29:04,329 DEBUG c.f.App [main] This is a debug log
+2023-06-28 12:29:34,233 DEBUG c.f.App [main] This is a debug log
+2023-06-28 13:08:49,188 DEBUG c.f.App [main] This is a debug log
