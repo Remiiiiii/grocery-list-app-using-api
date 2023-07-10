@@ -19,7 +19,7 @@ public class UserController {
         if (userFromDb == null) {
 
             ctx.json(new JsonResponse(false,
-                    "Username already exists in the system. Please choose a different username", null));
+                    "Username already exists", null));
 
         } else {
 

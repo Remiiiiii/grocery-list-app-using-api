@@ -18,6 +18,13 @@ public class GroceryItemController {
 
         User user = ctx.sessionAttribute("user");
 
+        if (user == null) {
+
+            ctx.json(new JsonResponse(false, "", "items are unretrievable because no session was found"));
+
+            return;
+        }
+
         List<GroceryItem> item = groceryItemService.getAllGroceryItemsGivenUserId(user.getId());
 
         ctx.json(new JsonResponse(true, "retrieving all items for: " + user.getFirstname(), item));

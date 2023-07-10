@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;1,100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/**------Background-white-----------**/
+:root {
+
+    --bg1: #e8eaec;
+    --text-color: #979797;
+    --color: #000;
+    --tcolor: rgb(119 119 119);
+
+    --boxShadow:
+        7px 7px 15px #45566754,
+        -8px -8px 15px rgb(81 101 121 / 4%),
+        inset -5px -4px 13px 0px rgb(81 101 121 / 35%),
+        inset 6px 7px 12px 0px rgb(255 255 255 / 94%);
+
+    --boxShadow2:
+        inset 4px 4px 8px rgb(189 200 213),
+        inset -4px -4px 8px rgb(255 255 255);
+
+    --boxShadow3:
+        4px 4px 8px rgb(189 200 213),
+        -4px -4px 8px rgb(255 255 255);
+
+    --sbShadow:
+        5px 5px 7px rgb(0 0 0 / 25%),
+        inset 2px 2px 5px rgb(255 255 255 / 25%),
+        inset -3px -3px 5px rgb(0 0 0 / 12%);
+
+    --scishadow:
+        linear-gradient(to bottom, #e8eaec, rgba(189, 200, 213, 0.795));
+    --scitextshadow:
+        2px 2px 3px #b8b9be,
+        -2px -2px 3px #fff;
+}
+
+/**------Background-Dark-----------**/
+body.dark {
+
+    --bg1: #2f363e;
+    --text-color: rgb(255, 208, 0);
+    --color: #FFF;
+    --tcolor: rgb(243, 243, 243);
+
+    --boxShadow:
+        5px 5px 15px rgba(0, 0, 0, 0.25),
+        5px 15px 15px rgba(0, 0, 0, 0.25),
+        inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+        inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+        inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+
+    --boxShadow2:
+        inset -3px -3px 6px rgb(73, 78, 83),
+        inset 3px 3px 6px rgb(32, 28, 28);
+
+    --boxShadow3:
+        -3px -3px 6px rgb(73, 78, 83),
+        3px 3px 6px rgb(32, 28, 28);
+
+    --sbShadow:
+        5px 5px 7px rgb(0 0 0 / 25%),
+        inset 2px 2px 5px rgb(255 255 255 / 25%),
+        inset -3px -3px 5px rgb(0 0 0 / 50%);
+
+
+    --scishadow:
+        linear-gradient(to bottom, #2f363e, rgb(73, 78, 83));
+
+    --scitextshadow:
+        -2px -2px 3px #a1a1a160,
+        2px 2px 3px #22272c;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: var(--bg1);
+}
+
+#items-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+    border-radius: 20px;
+    background: var(--bg1);
+    box-shadow: var(--boxShadow);
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+}
+
+.item-name-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    border: none;
+    font-weight: bold;
+    border-radius: 15px;
+    background: #e8eaec;
+    outline: none !important;
+    box-shadow: inset 4px 4px 8px rgb(189, 200, 213),
+        inset -4px -4px 8px rgb(255, 255, 255);
+}
+
+.item {
+    display: flex;
+    padding: 10px;
+    width: 500px;
+    border-radius: 6px;
+}
+
+.item-name {
+    font-size: 24px;
+    margin-left: 20px;
+    color:#656769;
+}
+
+.item-name:hover {
+    cursor: pointer;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    color: var(--color);
+    margin: 10px 10px;
+    font-weight: bold;
+    background: var(--bg1);
+    border: none;
+    box-shadow: var(--boxShadow3);
+    height: 50%;
+}
+
+.btn:hover {
+    cursor: pointer;
+    color: #ff00b7fa;
+    background-color: #e8eaec;
+    box-shadow: inset 4px 4px 8px rgb(189, 200, 213),
+        inset -4px -4px 8px rgb(255, 255, 255);
+}
+
+#add-item-form {
+    display: flex;
+    justify-content: center;
+    /* margin-top: 100px; */
+    position: fixed;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 20px;
+}
+
+#name-to-create {
+    color:#656769;
+    display: flex;
+    width: 300px;
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    background: #e8eaec;
+    outline: none !important;
+    box-shadow: inset 4px 4px 8px rgb(189, 200, 213),
+        inset -4px -4px 8px rgb(255, 255, 255);
+}
+
+#qty-to-create {
+    color:#656769;
+    display: flex;
+    width: 80px;
+    margin-left: 5px;
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    background: #e8eaec;
+    outline: none !important;
+    box-shadow: inset 4px 4px 8px rgb(189, 200, 213),
+        inset -4px -4px 8px rgb(255, 255, 255);
+}
+
+#add-btn {
+   margin: 3px 10px;
+}
+
+.dark-light {
+    left: 20px;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 80px;
+    width: 60px;
+    height: 60px;
+    box-shadow: 5px 5px 7px rgb(0, 0, 0, 25%),
+        inset 2px 2px 5px rgb(255, 255, 255, 25%),
+        inset -3px -3px 5px rgb(0, 0, 0, 12%);
+    border-radius: 50%;
+}
+
+.dark-light i {
+    position: absolute;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dark-light i.sun {
+    opacity: 0;
+    pointer-events: none;
+    color: var(--color);
+}
+
+.dark-light.active i.sun {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dark-light.active i.moon {
+    pointer-events: none;
+    opacity: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .item {
+        width: 90%;
+    }
+
+    #name-to-create {
+        width: 45%;
+        margin-left: 10px;
+    }
+
+    #qty-to-create {
+        width: 15%;
+    }
+
+    #items-container {
+       width: 90%;
+       margin-top: 110px;
+    }
+}

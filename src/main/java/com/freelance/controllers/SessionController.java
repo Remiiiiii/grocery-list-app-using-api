@@ -48,5 +48,4 @@ public class SessionController {
             ctx.json(new JsonResponse(true, "session found", user));
         }
     }
-
 }

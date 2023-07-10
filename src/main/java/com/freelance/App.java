@@ -6,14 +6,15 @@ import com.freelance.controllers.GroceryItemController;
 import com.freelance.controllers.SessionController;
 import com.freelance.controllers.UserController;
 import io.javalin.Javalin;
+import io.javalin.http.staticfiles.Location;
 
 /**
  * Grocery List Specs
  * 
- * register a new user
- * login a new user
+ * register a new user / register page
+ * login a new user / login page
  * 
- * when logged in:
+ * when logged in: / dashboard page
  * create a new grocery list item
  * define qty and value to see if item is in cart
  * 
@@ -41,7 +42,10 @@ public class App {
         // MainMenu mainMenu = new MainMenu();
         // mainMenu.view();
 
-        Javalin app = Javalin.create().start(9000);
+        /* addStaticFiles is how to host the frontend */
+        Javalin app = Javalin.create(config -> {
+            config.staticFiles.add("/frontend", Location.CLASSPATH);
+        }).start(9000);
 
         app.post("/api/user", userController::register);
         app.post("/api/session", sc::login);
