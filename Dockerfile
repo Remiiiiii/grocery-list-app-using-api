@@ -19,7 +19,7 @@
 # RUN mvn -f home/app/pom.xml clean package
 
 # run stage
-FROM openjdk:11.0.11-jre-slim
+FROM openjdk:11-jre-slim
 
 COPY --from=build /home/app/target/grocerylistapp-1.0-SNAPSHOT-jar-with-dependencies.jar /home/app/app.jar
 
