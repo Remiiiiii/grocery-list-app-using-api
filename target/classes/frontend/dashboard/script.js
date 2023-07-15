@@ -1,11 +1,12 @@
-
+ //http://localhost:9000 was removed after deploying to codepipeline
+ let responseBody = await response.json();
 let user;
 let items;
 let itemsContainer = document.getElementById("items-container");
 
 window.addEventListener ("load", async () => {
      
-  let response = await fetch("http://localhost:9000/api/session");
+  let response = await fetch("/api/session");
   
   let responseBody = await response.json();
   
@@ -32,7 +33,7 @@ window.addEventListener ("load", async () => {
 }) 
 
 async function getAllItems() {
-  let response = await fetch("http://localhost:9000/api/item");
+  let response = await fetch("/api/item");
 
   let responseBody =  await response.json();
 
@@ -43,7 +44,7 @@ let logoutBtn = document.getElementById("logout-btn");
 
 logoutBtn.addEventListener("click", () => {
 
-  fetch("http://localhost:9000/api/session", { method: "DELETE"});
+  fetch("/session", { method: "DELETE"});
 
    window.location = "../";
 });
@@ -80,7 +81,7 @@ const displayItems = () => {
       //prevent bubbling
       event.stopPropagation();
       
-      await fetch(`http://localhost:9000/api/item/${item.id}`, {
+      await fetch(`/api/item/${item.id}`, {
         method: "PATCH"
       });
       
@@ -91,7 +92,7 @@ const displayItems = () => {
     deleteBtnElement.className = "btn";
     deleteBtnElement.innerText = "Delete";
     deleteBtnElement.addEventListener("click", async () => {
-      let response = await fetch(`http://localhost:9000/api/item/${item.id}`, {
+      let response = await fetch(`/api/item/${item.id}`, {
 
       method: "DELETE"
       });
@@ -128,7 +129,7 @@ addItemFormElement.addEventListener("submit", async (event) => {
   let nameToCreateElement = document.getElementById("name-to-create");
   let qtyToCreateElement = document.getElementById("qty-to-create");
 
-  let response = await fetch("http://localhost:9000/api/item", {
+  let response = await fetch("/api/item", {
     method: "POST",
     body: JSON.stringify({
       "name": nameToCreateElement.value,

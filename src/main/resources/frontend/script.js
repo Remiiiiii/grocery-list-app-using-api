@@ -3,7 +3,7 @@
 
 window.onload = async () => {
     let registerBtnElement = document.getElementById("register-btn")
-    let response = await fetch("http://localhost:9000/api/session");
+    let response = await fetch("/api/session"); //http://localhost:9000 was removed after deploying to codepipeline
     let responseBody = await response.json();
 
     if(responseBody.successful) {
@@ -25,8 +25,10 @@ loginFormElement.addEventListener("submit", (event) => {
 sendLoginRequest(usernameInputElement.value, passwordInputElement.value);
 });
 
+ //http://localhost:9000 was removed after deploying to codepipeline
+ let responseBody = await response.json();
 async function sendLoginRequest(username, password) {
-    let response = await fetch("http://localhost:9000/api/session", 
+    let response = await fetch("/api/session", 
     {
         method: "POST",
         body: JSON.stringify({
