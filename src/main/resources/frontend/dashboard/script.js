@@ -1,5 +1,5 @@
  //http://localhost:9000 was removed after deploying to codepipeline
- let responseBody = await response.json();
+
 let user;
 let items;
 let itemsContainer = document.getElementById("items-container");
