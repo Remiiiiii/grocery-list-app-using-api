@@ -1,9 +1,9 @@
 
- //http://localhost:9000 was removed after deploying to codepipeline
+//http://localhost:9000 was removed after deploying to codepipeline
 
 window.onload = async () => {
     let registerBtnElement = document.getElementById("register-btn")
-    let response = await fetch("/api/session"); //http://localhost:9000 was removed after deploying to codepipeline
+    let response = await fetch("/api/session"); 
     let responseBody = await response.json();
 
     if(responseBody.successful) {
@@ -25,7 +25,6 @@ loginFormElement.addEventListener("submit", (event) => {
 sendLoginRequest(usernameInputElement.value, passwordInputElement.value);
 });
 
- let responseBody = await response.json();
 async function sendLoginRequest(username, password) {
     let response = await fetch("/api/session", 
     {
