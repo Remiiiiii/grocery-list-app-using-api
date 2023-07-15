@@ -1,5 +1,5 @@
 
-
+ //http://localhost:9000 was removed after deploying to codepipeline
 
 window.onload = async () => {
     let registerBtnElement = document.getElementById("register-btn")
@@ -25,7 +25,6 @@ loginFormElement.addEventListener("submit", (event) => {
 sendLoginRequest(usernameInputElement.value, passwordInputElement.value);
 });
 
- //http://localhost:9000 was removed after deploying to codepipeline
  let responseBody = await response.json();
 async function sendLoginRequest(username, password) {
     let response = await fetch("/api/session", 
