@@ -1,0 +1,95 @@
+2023-06-07 12:05:01,636 DEBUG c.f.App [main] This is a debug log
+2023-06-07 12:06:04,783 DEBUG c.f.App [main] This is a debug log
+2023-06-07 12:08:01,872 DEBUG c.f.App [main] This is a debug log
+2023-06-07 12:19:21,661 DEBUG c.f.App [main] This is a debug log
+2023-06-07 12:21:07,957 DEBUG c.f.App [main] This is a debug log
+2023-06-07 12:21:17,885 INFO c.f.c.MainMenu [main] remy123 has successfully logged into the system
+
+2023-06-07 12:37:44,060 DEBUG c.f.App [main] This is a debug log
+2023-06-07 12:38:08,283 ERROR c.f.u.ConnectionUtil [main] Connection attempt occured
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:354) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.Driver.makeConnection(Driver.java:443) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.Driver.connect(Driver.java:297) ~[postgresql-42.6.0.jar:42.6.0]
+	at java.sql.DriverManager.getConnection(DriverManager.java:677) ~[java.sql:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:228) ~[java.sql:?]
+	at com.freelance.util.ConnectionUtil.getConnection(ConnectionUtil.java:21) [classes/:?]
+	at com.freelance.dao.UserDaoImpl.getUserByUsername(UserDaoImpl.java:50) [classes/:?]
+	at com.freelance.services.UserService.validateCredentials(UserService.java:22) [classes/:?]
+	at com.freelance.consoleviews.MainMenu.view(MainMenu.java:35) [classes/:?]
+	at com.freelance.App.main(App.java:42) [classes/:?]
+Caused by: java.net.UnknownHostException: sdfsdatabase-3.c1id9nh7k0j8.us-east-1.rds.amazonaws.com
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:229) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:?]
+	at java.net.Socket.connect(Socket.java:609) ~[?:?]
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258) ~[postgresql-42.6.0.jar:42.6.0]
+	... 11 more
+2023-06-12 19:59:34,708 DEBUG c.f.App [main] This is a debug log
+2023-06-12 20:01:47,168 DEBUG c.f.App [main] This is a debug log
+2023-06-12 20:02:00,853 INFO c.f.c.MainMenu [main] remy123 has successfully logged into the system
+2023-06-14 22:25:16,963 DEBUG c.f.App [main] This is a debug log
+2023-06-21 11:14:05,990 DEBUG c.f.App [main] This is a debug log
+2023-06-21 11:14:14,239 INFO c.f.c.MainMenu [main] remy123 has successfully logged into the system
+2023-06-24 13:38:10,569 DEBUG c.f.App [main] This is a debug log
+2023-06-24 14:55:09,854 DEBUG c.f.App [main] This is a debug log
+2023-06-24 14:56:37,547 DEBUG c.f.App [main] This is a debug log
+2023-06-24 14:56:59,264 DEBUG c.f.App [main] This is a debug log
+2023-06-24 14:58:06,174 DEBUG c.f.App [main] This is a debug log
+2023-06-24 14:59:30,589 DEBUG c.f.App [main] This is a debug log
+2023-06-24 15:04:48,113 DEBUG c.f.App [main] This is a debug log
+2023-06-24 15:06:30,692 DEBUG c.f.App [main] This is a debug log
+2023-06-24 15:13:57,276 DEBUG c.f.App [main] This is a debug log
+2023-06-24 15:16:55,598 DEBUG c.f.App [main] This is a debug log
+2023-06-24 15:24:23,252 DEBUG c.f.App [main] This is a debug log
+2023-06-24 15:29:04,329 DEBUG c.f.App [main] This is a debug log
+2023-06-28 12:29:34,233 DEBUG c.f.App [main] This is a debug log
+2023-06-28 13:08:49,188 DEBUG c.f.App [main] This is a debug log
+2023-07-04 14:50:24,323 DEBUG c.f.App [main] This is a debug log
+2023-07-04 14:55:10,432 DEBUG c.f.App [main] This is a debug log
+2023-07-04 14:56:46,686 DEBUG c.f.App [main] This is a debug log
+2023-07-04 14:57:33,881 DEBUG c.f.App [main] This is a debug log
+2023-07-04 15:03:19,412 DEBUG c.f.App [main] This is a debug log
+2023-07-04 16:04:08,490 DEBUG c.f.App [main] This is a debug log
+2023-07-04 16:39:43,180 DEBUG c.f.App [main] This is a debug log
+2023-07-04 20:29:07,190 DEBUG c.f.App [main] This is a debug log
+2023-07-05 17:38:44,728 DEBUG c.f.App [main] This is a debug log
+2023-07-05 18:04:26,966 DEBUG c.f.App [main] This is a debug log
+2023-07-06 10:48:23,262 DEBUG c.f.App [main] This is a debug log
+2023-07-06 12:08:13,201 DEBUG c.f.App [main] This is a debug log
+2023-07-06 12:32:03,638 DEBUG c.f.App [main] This is a debug log
+2023-07-06 12:37:21,606 DEBUG c.f.App [main] This is a debug log
+2023-07-06 13:05:12,183 DEBUG c.f.App [main] This is a debug log
+2023-07-06 13:09:00,617 DEBUG c.f.App [main] This is a debug log
+2023-07-06 13:30:33,147 DEBUG c.f.App [main] This is a debug log
+2023-07-06 13:31:39,167 DEBUG c.f.App [main] This is a debug log
+2023-07-06 13:36:02,247 DEBUG c.f.App [main] This is a debug log
+2023-07-06 13:43:14,517 DEBUG c.f.App [main] This is a debug log
+2023-07-06 13:52:38,066 DEBUG c.f.App [main] This is a debug log
+2023-07-07 13:12:21,578 DEBUG c.f.App [main] This is a debug log
+2023-07-07 13:16:31,767 DEBUG c.f.App [main] This is a debug log
+2023-07-07 13:59:09,889 DEBUG c.f.App [main] This is a debug log
+2023-07-07 14:03:18,591 DEBUG c.f.App [main] This is a debug log
+2023-07-07 14:06:47,159 DEBUG c.f.App [main] This is a debug log
+2023-07-07 14:07:17,401 DEBUG c.f.App [main] This is a debug log
+2023-07-07 14:07:47,372 DEBUG c.f.App [main] This is a debug log
+2023-07-07 14:08:24,463 DEBUG c.f.App [main] This is a debug log
+2023-07-07 14:08:33,376 DEBUG c.f.App [main] This is a debug log
+2023-07-07 14:18:45,207 DEBUG c.f.App [main] This is a debug log
+2023-07-07 14:19:14,177 DEBUG c.f.App [main] This is a debug log
+2023-07-07 14:50:17,926 DEBUG c.f.App [main] This is a debug log
+2023-07-07 15:41:35,759 DEBUG c.f.App [main] This is a debug log
+2023-07-07 15:44:18,965 DEBUG c.f.App [main] This is a debug log
+2023-07-07 15:58:52,986 DEBUG c.f.App [main] This is a debug log
+2023-07-07 17:32:10,170 DEBUG c.f.App [main] This is a debug log
+2023-07-07 17:41:44,582 DEBUG c.f.App [main] This is a debug log
+2023-07-07 17:48:39,191 DEBUG c.f.App [main] This is a debug log
+2023-07-08 10:59:04,535 DEBUG c.f.App [main] This is a debug log
+2023-07-08 13:07:34,349 DEBUG c.f.App [main] This is a debug log
+2023-07-08 13:10:35,394 DEBUG c.f.App [main] This is a debug log
+2023-07-09 13:23:37,947 DEBUG c.f.App [main] This is a debug log
+2023-07-15 16:40:05,237 DEBUG c.f.App [main] This is a debug log

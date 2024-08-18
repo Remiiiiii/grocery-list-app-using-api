@@ -1,7 +1,6 @@
 package com.freelance.dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -44,7 +43,7 @@ public class GroceryItemDaoImpl implements GroceryItemDao {
         try {
             Connection conn = ConnectionUtil.getConnection();
 
-            String sql = "select * from grocery_items where fk_users_id = ? order by id";
+            String sql = "select * from grocery_items where user_id_fk = ? order by id";
 
             PreparedStatement ps = conn.prepareStatement(sql);
 

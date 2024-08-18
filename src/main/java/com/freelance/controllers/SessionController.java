@@ -11,20 +11,16 @@ public class SessionController {
     UserService userService = new UserService();
 
     public void login(Context ctx) {
-
         User credentials = ctx.bodyAsClass(User.class);
 
         if (userService.validateCredentials(credentials)) {
-
             User userFromDb = userService.getUserGivenUsername(credentials.getUsername());
 
             ctx.sessionAttribute("user", userFromDb);
 
-            ctx.json(new JsonResponse(true, "login successful", userFromDb));
-
+            ctx.json(new JsonResponse(true, "login successful", credentials));
         } else {
-
-            ctx.json(new JsonResponse(false, "Invalid username or password", null));
+            ctx.json(new JsonResponse(false, "invalid username or password", null));
         }
     }
 
@@ -36,15 +32,11 @@ public class SessionController {
     }
 
     public void checkSession(Context ctx) {
-
         User user = ctx.sessionAttribute("user");
 
         if (user == null) {
-
             ctx.json(new JsonResponse(false, "no session found", null));
-
         } else {
-
             ctx.json(new JsonResponse(true, "session found", user));
         }
     }

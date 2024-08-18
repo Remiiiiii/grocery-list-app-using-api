@@ -48,14 +48,17 @@ public class App {
         }).start(9000);
 
         app.post("/api/user", userController::register);
-        app.post("/api/session", sc::login);
-        app.delete("/api/session", sc::logout);
+
         app.get("/api/session", sc::checkSession);
 
+        app.post("/api/session", sc::login);
+
+        app.delete("/api/session", sc::logout);
+
         app.get("/api/item", groceryItemController::getAllItemsGivenUserId);
-        app.post("/api/item", groceryItemController::createItem);
-        app.patch("/api/item/{itemId}", groceryItemController::markItemComplete);
-        app.delete("/api/item/{itemId}", groceryItemController::deleteItem);
+        app.post("api/item", groceryItemController::createItem);
+        app.patch("api/item/{itemId}", groceryItemController::markItemInCart);
+        app.delete("api/item/{itemId}", groceryItemController::deleteItem);
 
         // UserDao userDao = new UserDaoImpl();
 

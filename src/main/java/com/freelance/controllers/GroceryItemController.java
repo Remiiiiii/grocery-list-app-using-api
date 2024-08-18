@@ -1,6 +1,5 @@
 package com.freelance.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.freelance.models.GroceryItem;
@@ -54,13 +53,12 @@ public class GroceryItemController {
 
     }
 
-    public void markItemComplete(Context ctx) {
+    public void markItemInCart(Context ctx) {
 
-        Integer item = Integer.parseInt(ctx.pathParam("itemId"));
+        Integer groceryItemId = Integer.parseInt(ctx.pathParam("itemId"));
 
-        groceryItemService.markInCartivenGroceryId(item);
+        groceryItemService.markInCartivenGroceryId(groceryItemId);
 
         ctx.json(new JsonResponse(true, "Item marked in cart if exists", null));
-
     }
 }
