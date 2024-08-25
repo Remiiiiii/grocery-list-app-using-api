@@ -1,9 +1,9 @@
 window.onload = async () => {
-  let response = await fetch("/api/session");
+  let response = await fetch("http://localhost:9000/api/session");
   let responseBody = await response.json();
 
   if (responseBody.successful) {
-    window.location = "./";
+    window.location = "../dashboard";
   }
 };
 

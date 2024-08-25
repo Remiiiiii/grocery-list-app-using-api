@@ -1,4 +1,4 @@
-//http://localhost:9000 was removed after deploying to codepipeline
+let itemsContainer;
 let user;
 let items;
 window.addEventListener("load", async () => {
@@ -11,13 +11,14 @@ window.addEventListener("load", async () => {
   let responseBody = await response.json();
 
   if (!responseBody.successful) {
-    console.log("session not found");
+    window.location = "../";
   }
 
   user = responseBody.data;
 
   items = await getAllItems();
   console.log(displayItems());
+  console.log(items);
 });
 
 async function getAllItems() {
@@ -46,10 +47,9 @@ logoutBtn.addEventListener("click", () => {
 //   </div>
 //   <button id="delete-btn" class="btn">Delete</button>
 // </div>
-function displayItems() {
-  let itemsContainer = document.getElementById("items-container");
-
+async function displayItems() {
   items.forEach((item) => {
+    itemsContainer = document.getElementById("items-container");
     let nameBtnContainerElement = document.createElement("div");
     nameBtnContainerElement.className = "name-btn-container";
     nameBtnContainerElement.id = `item-${item.id}`;
@@ -63,6 +63,19 @@ function displayItems() {
     let itemNameElement = document.createElement("div");
     itemNameElement.className = "item-name";
     itemNameElement.innerText = `${item.qty} ${item.name}`;
+
+    if (item.inCart) {
+      itemNameElement.style.textDecoration = "line-through";
+    }
+
+    itemNameElement.addEventListener("click", async (event) => {
+      event.stopPropagation();
+
+      await fetch(`http://localhost:9000/api/item/${item.id}`, {
+        method: "PATCH",
+      });
+      itemNameElement.style.textDecoration = "line-through";
+    });
 
     let deleteBtnElement = document.createElement("button");
     deleteBtnElement.className = "btn";
@@ -95,79 +108,34 @@ function displayItems() {
 
     console.log(item);
 
-    // itemElement.id = `item-${item.id}`;
-
-    //   itemElement.addEventListener("click", () => {
-    //     console.log("event triggered");
-    //   });
-
-    //   itemNameContainerElement.className = "item-name-container";
-
-    //   let itemNameElement = document.createElement("div");
-    //   itemNameElement.className = "item-name";
-    //   itemNameElement.innerText = `${item.qty} ${item.name}`;
-    //   console.log(item);
-
-    //   itemNameElement.addEventListener("click", () => {
-    //     console.log("event triggered");
-    //   });
-
-    //   if (item.inCart) {
-    //     itemNameElement.style.textDecoration = "line-through";
-    //   }
-
-    //   itemNameElement.addEventListener("click", async (event) => {
-    //     //prevent bubbling
-    //     event.stopPropagation();
-
-    //     await fetch(`/api/item/${item.id}`, {
-    //       method: "PATCH",
-    //     });
-
-    //     itemNameElement.style.textDecoration = "line-through";
-    //   });
-
-    //   itemsContainer.appendChild(itemElement);
-    //   itemElement.appendChild(itemNameContainerElement);
-    //   itemElement.appendChild(deleteBtnElement);
-    //   itemNameContainerElement.appendChild(itemNameElement);
+    itemNameElement.addEventListener("click", () => {
+      console.log("event triggered");
+    });
   });
 }
 
-// {
-//   /* <div class="item">
-// <div class="item-name-container">
-//   <div class="item-name">2 Sliced Cheese</div>
-// </div>
-// <button class="btn btn-primary">Delete</button>
-// </div> */
-// }
+let addItemFormElement = document.getElementById("add-item-form");
+addItemFormElement.addEventListener("submit", async (event) => {
+  event.preventDefault();
 
-// let addItemFormElement = document.getElementById("add-item-form");
-// addItemFormElement.addEventListener("submit", async (event) => {
-//   event.preventDefault();
+  let nameToCreateElement = document.getElementById("name-to-create");
+  let qtyToCreateElement = document.getElementById("qty-to-create");
 
-//   let nameToCreateElement = document.getElementById("name-to-create");
-//   let qtyToCreateElement = document.getElementById("qty-to-create");
+  let response = await fetch("http://localhost:9000/api/item", {
+    method: "POST",
+    body: JSON.stringify({
+      name: nameToCreateElement.value,
+      qty: qtyToCreateElement.value,
+    }),
+  });
 
-//   let response = await fetch("/api/item", {
-//     method: "POST",
-//     body: JSON.stringify({
-//       name: nameToCreateElement.value,
-//       qty: qtyToCreateElement.value,
-//     }),
-//   });
+  let responseBody = await response.json();
+  console.log(responseBody);
 
-//   let responseBody = await response.json();
-//   console.log(responseBody);
-
-//   itemsContainer.innerHTML = "";
-//   items = await getAllItems();
-//   displayItems();
-
-//   nameToCreateElement.value = "";
-//   qtyToCreateElement.value = "";
-// });
+  itemsContainer.innerHTML = "";
+  items = await getAllItems();
+  displayItems();
+});
 
 const body = document.querySelector("body"),
   modeToggle = document.querySelector(".dark-light");

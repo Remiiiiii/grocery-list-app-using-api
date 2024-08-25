@@ -67,7 +67,11 @@ body {
 }
 
 #items-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-top: 150px !important;
+  margin-left: 5%;
 }
 
 .name-btn-container {
@@ -124,20 +128,19 @@ body {
     inset -4px -4px 8px rgb(255, 255, 255);
 }
 
-#add-item-form {
+#form-container {
   display: flex;
   justify-content: center;
-  /* margin-top: 100px; */
+  margin-left: 10%;
+}
+
+#add-item-form {
   position: fixed;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
   bottom: 20px;
 }
 
 #name-to-create {
   color: #656769;
-  display: flex;
   width: 300px;
   padding: 10px;
   border: none;
@@ -153,8 +156,7 @@ body {
 
 #qty-to-create {
   color: #656769;
-  display: flex;
-  width: 80px;
+  width: 40px;
   margin-left: 5px;
   padding: 10px;
   border: none;
@@ -209,9 +211,14 @@ body {
   opacity: 0;
 }
 
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 385px) {
   .item {
     width: 90%;
+  }
+
+  #form-container {
+    display: flex;
+    justify-content: center;
   }
 
   #name-to-create {

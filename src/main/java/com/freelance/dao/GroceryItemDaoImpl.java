@@ -71,9 +71,7 @@ public class GroceryItemDaoImpl implements GroceryItemDao {
 
             Connection conn = ConnectionUtil.getConnection();
 
-            String sql = "";
-
-            sql = "insert into grocery_items (name, qty, fk_users_id) values (?, ?, ?)";
+            String sql = "insert into grocery_items (name, qty, user_id_fk) values (?, ?, ?)";
 
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, groceryItem.getName());

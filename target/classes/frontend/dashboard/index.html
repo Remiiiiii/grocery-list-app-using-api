@@ -50,22 +50,14 @@
       <i class="bx bx-moon moon"></i>
       <i class="bx bx-sun sun"></i>
     </div>
-    <div id="items-container">
-      <!-- <div class="name-btn-container">
-        <div class="item-container">
-          <div class="item-name-container">
-            <div class="item-name">Milk</div>
-          </div>
-        </div>
-        <button id="delete-btn" class="btn">Delete</button>
-      </div> -->
+    <div id="items-container"></div>
+    <div id="form-container">
+      <form id="add-item-form">
+        <input type="text" id="name-to-create" placeholder="item..." required />
+        <input type="number" id="qty-to-create" placeholder="qty" required />
+        <button id="add-btn" class="btn">Add</button>
+      </form>
     </div>
-    <form id="add-item-form">
-      <input type="text" id="name-to-create" placeholder="item..." required />
-      <input type="number" id="qty-to-create" placeholder="qty" required />
-      <button id="add-btn" class="btn">Add</button>
-    </form>
-
     <script src="./script.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"

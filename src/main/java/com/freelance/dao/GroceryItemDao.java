@@ -3,7 +3,6 @@ package com.freelance.dao;
 import java.util.List;
 
 import com.freelance.models.GroceryItem;
-import com.freelance.models.User;
 
 /* create new grocery item
  * get all grocery items given user id
