@@ -26,4 +26,4 @@ COPY  target/grocerylistapp-1.0-SNAPSHOT-jar-with-dependencies.jar /home/app/app
 # Open port for use
 EXPOSE 9000
 
-ENTRYPOINT ["java", "-jar", "home/app/app.jar"]
+ENTRYPOINT ["java", "-jar", "/home/app/app.jar"]
