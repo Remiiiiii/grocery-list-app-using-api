@@ -7,5 +7,5 @@ phases:
        - mvn package
 artifacts:
   files:
-     - target/grocerylistapp-1.0-SNAPSHOT-jar-with-dependencies.jar
+     - target/grocery-list-app-using-api-1.0-SNAPSHOT-jar-with-dependencies.jar
      - 'Dockerfile'

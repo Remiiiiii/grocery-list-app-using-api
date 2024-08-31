@@ -6,6 +6,6 @@ phases:
        - java -version
        - mvn package
 artifacts:
-  files:
-     - target/grocerylistapp-1.0-SNAPSHOT-jar-with-dependencies.jar
+  files:grocery-list-app-using-api
+     - target/grocery-list-app-using-api-1.0-SNAPSHOT-jar-with-dependencies.jar
      - 'Dockerfile'
