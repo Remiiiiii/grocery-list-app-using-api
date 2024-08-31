@@ -1,0 +1,17 @@
+com\freelance\dao\UserDaoImpl.class
+com\freelance\models\JsonResponse.class
+com\freelance\services\GroceryItemService.class
+com\freelance\pigLatin\Test.class
+com\freelance\util\ConnectionUtil.class
+com\freelance\pigLatin\PigLatin.class
+com\freelance\controllers\SessionController.class
+com\freelance\util\InputUtil.class
+com\freelance\controllers\UserController.class
+com\freelance\dao\GroceryItemDaoImpl.class
+com\freelance\services\UserService.class
+com\freelance\dao\GroceryItemDao.class
+com\freelance\models\GroceryItem.class
+com\freelance\App.class
+com\freelance\controllers\GroceryItemController.class
+com\freelance\models\User.class
+com\freelance\dao\UserDao.class

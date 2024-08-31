@@ -7,7 +7,7 @@ window.addEventListener("load", async () => {
   let usernameElement = document.getElementById("dashboard");
   usernameElement.innerText = "Welcome " + getUsername;
   usernameElement.style.display = "block";
-  let response = await fetch("http://localhost:9000/api/session");
+  let response = await fetch("/api/session");
   let responseBody = await response.json();
 
   if (!responseBody.successful) {
@@ -22,7 +22,7 @@ window.addEventListener("load", async () => {
 });
 
 async function getAllItems() {
-  let response = await fetch("http://localhost:9000/api/item");
+  let response = await fetch("/api/item");
   let responseBody = await response.json();
   return responseBody.data;
 }
@@ -34,7 +34,7 @@ async function getAllItems() {
 
 let logoutBtn = document.getElementById("logout-btn");
 logoutBtn.addEventListener("click", () => {
-  fetch("http://localhost:9000/api/session", { method: "DELETE" });
+  fetch("/api/session", { method: "DELETE" });
 
   window.location = "../";
 });
@@ -71,7 +71,7 @@ async function displayItems() {
     itemNameElement.addEventListener("click", async (event) => {
       event.stopPropagation();
 
-      await fetch(`http://localhost:9000/api/item/${item.id}`, {
+      await fetch(`/api/item/${item.id}`, {
         method: "PATCH",
       });
       itemNameElement.style.textDecoration = "line-through";
@@ -92,7 +92,7 @@ async function displayItems() {
     itemsContainer.appendChild(nameBtnContainerElement);
 
     deleteBtnElement.addEventListener("click", async () => {
-      let response = await fetch(`http://localhost:9000/api/item/${item.id}`, {
+      let response = await fetch(`/api/item/${item.id}`, {
         method: "DELETE",
       });
 
@@ -121,7 +121,7 @@ addItemFormElement.addEventListener("submit", async (event) => {
   let nameToCreateElement = document.getElementById("name-to-create");
   let qtyToCreateElement = document.getElementById("qty-to-create");
 
-  let response = await fetch("http://localhost:9000/api/item", {
+  let response = await fetch("/api/item", {
     method: "POST",
     body: JSON.stringify({
       name: nameToCreateElement.value,

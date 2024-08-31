@@ -1,60 +1,54 @@
- //http://localhost:9000 was removed after deploying to codepipeline
- let responseBody = await response.json();
+let responseBody = await response.json();
 window.onload = async () => {
-    let response = await fetch("/api/session");
-    let responseBody = await response.json();
+  let response = await fetch("/api/session");
+  let responseBody = await response.json();
 
-    if (responseBody.successful) {
-        window.location = "./";
-    }
-}
+  if (responseBody.successful) {
+    window.location = "./";
+  }
+};
 
 let registerFormElement = document.getElementById("register-form");
 
 registerFormElement.addEventListener("submit", (event) => {
-    
-    event.preventDefault();
+  event.preventDefault();
 
-    let credentials = {
+  let credentials = {
+    username: document.getElementById("username-input").value,
+    password: document.getElementById("password-input").value,
+    firstname: document.getElementById("firstname-input").value,
+    lastname: document.getElementById("lastname-input").value,
+  };
 
-        "username": document.getElementById("username-input").value,
-        "password": document.getElementById("password-input").value,
-        "firstname": document.getElementById("firstname-input").value,
-        "lastname": document.getElementById("lastname-input").value
-    }
-
-    sendRegistrationRequest(credentials);
+  sendRegistrationRequest(credentials);
 });
 
-async function sendRegistrationRequest(credentials){
-    let response = await fetch("/api/user",
-    {
-        method: "POST",
-        body: JSON.stringify(credentials)
-    });
+async function sendRegistrationRequest(credentials) {
+  let response = await fetch("/api/user", {
+    method: "POST",
+    body: JSON.stringify(credentials),
+  });
 
-    let responseBody = await response.json();
-    console.log(responseBody);
+  let responseBody = await response.json();
+  console.log(responseBody);
 
-    if (!responseBody.successful) {
-        let messageElement = document.getElementById("validation");
-        messageElement.innerText = responseBody.message;
-        messageElement.style.display = 'block';
-    }
+  if (!responseBody.successful) {
+    let messageElement = document.getElementById("validation");
+    messageElement.innerText = responseBody.message;
+    messageElement.style.display = "block";
+  }
 }
 
 const body = document.querySelector("body"),
-modeToggle = document.querySelector(".dark-light");
+  modeToggle = document.querySelector(".dark-light");
 
 modeToggle.addEventListener("click", () => {
-    modeToggle.classList.toggle("active");
-    body.classList.toggle("dark");
+  modeToggle.classList.toggle("active");
+  body.classList.toggle("dark");
 
-    if (!body.classList.contains("dark")) {
-        
-        localStorage.setItem("mode", "light-mode");
-    } else {
-        
-        localStorage.setItem("mode", "dark-mode");
-    }
+  if (!body.classList.contains("dark")) {
+    localStorage.setItem("mode", "light-mode");
+  } else {
+    localStorage.setItem("mode", "dark-mode");
+  }
 });
