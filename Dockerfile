@@ -20,8 +20,8 @@
 
 # run stage
 FROM openjdk:11-jre-slim
-#--from=build
-COPY target/grocery-list-app-using-api-1.0-SNAPSHOT-jar-with-dependencies.jar /home/app/app.jar
+#
+COPY --from=build target/grocery-list-app-using-api-1.0-SNAPSHOT-jar-with-dependencies.jar /home/app/app.jar
 
 # Open port for use
 EXPOSE 9000
